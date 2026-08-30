@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "prolink",
+  "version": "0.1.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw0FYBO6bMC2mM6dpsttQgfy7/srZaJljcrVMYM+Kq/IujGZjyQ8jes9Akv0YWf8Q2jhxFrdBmnqDxkNLak6BnyX65akF6FRynvSCDn8f2RrcCDMegAHuxKdGw7hphtSAbMUGsMDVavpjf1V8OIuhama7L7BjM0GG5PFM6Sb3q6MMgVZ2RG9JquEXpqEcLHvI3GE3SIRJeE/Z8WuIrkW03o67ExM675k0nlDmaYY2ncbsGaLw9GNHrymUkCDj5R6xO5ec2QlMCb3mrhnwDa+flqb5dUNAMTrBL3vJq1J6FYSO7wpquEOnphG3kiN31l5nVwI5QC1RlVb4MIYY6Su5cQIDAQAB",
+  "description": "Bridge a local CLI to ChatGPT web — open a new chat, send a prompt, return the response.",
+  "permissions": ["tabs", "alarms", "storage"],
+  "host_permissions": ["https://chatgpt.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

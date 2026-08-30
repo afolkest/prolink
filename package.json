@@ -1,0 +1,20 @@
+{
+  "name": "prolink",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Send a prompt to a new ChatGPT (Pro) chat from your terminal, via a browser-extension bridge.",
+  "type": "module",
+  "bin": {
+    "prolink": "bin/prolink.js"
+  },
+  "scripts": {
+    "start": "node bin/prolink.js",
+    "test": "node --check extension/background.js && node --check extension/content.js && node --check extension/dump.js && node --check src/jobs.js && node test/bridge.test.mjs && node test/transcript.test.mjs && node test/jobs.test.mjs && node test/cli.test.mjs && node test/extension-dump.test.mjs"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
